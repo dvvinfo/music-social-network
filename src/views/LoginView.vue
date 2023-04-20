@@ -5,15 +5,25 @@
         <div class="bg-black p-8 shadow rounded mb-6">
           <h1 class="mb-6 text-lg text-gray-100 font-thin">Давайте зажигать!</h1>
           <div class="mb-4">
-            <label class="block uppercase tracking-wide text-xs font-bold mb-2 text-gray-100">
-              first name
-            </label>
-            <input
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
+            <textInput
+              label="Email"
+              :label-color="false"
+              placeholder="ivanov@mail.ru"
+              v-model:input="email"
+              input-type="email"
+              error="Это тестовая ошибка"
             />
           </div>
-          <span class="text-red-500"> error</span>
+          <div class="mb-4">
+            <TextInput
+              label="Пароль"
+              :label-color="false"
+              placeholder="password123?"
+              v-model:input="password"
+              input-type="password"
+              error="Это тестовая ошибка"
+            />
+          </div>
           <button
             class="block w-full bg-green-500 text-white rounded-sm py-3 text-sm tracking-wide"
           >
@@ -31,6 +41,13 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import TextInput from '../components/UI/TextInput.vue'
+
+const email = ref(null)
+const password = ref(null)
+
+</script>
 
 <style lang="scss" scoped></style>
