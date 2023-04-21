@@ -16,21 +16,27 @@
           </span>
         </div>
         <div class="w-1/2 mt-2">
-          <RouterLinkButton btn-text="Редактировать профиль" color="green" url="/account/edit-profile"/>
+          <RouterLinkButton
+            btn-text="Редактировать профиль"
+            color="green"
+            url="/account/edit-profile"
+          />
         </div>
       </div>
-      <ProfileInfoSection/>
-      <ProfileAboutSection/>
+      <ProfileInfoSection />
+      <ProfileAboutSection />
     </div>
   </div>
-  <SongsSection/>
+  <SongsSection />
+  <YoutubeVideoSection />
 </template>
 
 <script setup>
 import ProfileInfoSection from '../../components/partials/profile/ProfileInfoSection.vue'
 import ProfileAboutSection from '../../components/partials/profile/ProfileAboutSection.vue'
 import SongsSection from '../../components/partials/profile/SongsSection.vue'
-import RouterLinkButton from '../../components/UI/RouterLinkButton.vue';
+import RouterLinkButton from '../../components/UI/RouterLinkButton.vue'
+import YoutubeVideoSection from '../../components/partials/profile/YoutubeVideoSection.vue'
 </script>
 
 <style lang="scss" scoped></style>
