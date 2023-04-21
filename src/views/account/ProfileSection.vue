@@ -29,6 +29,7 @@
   </div>
   <SongsSection />
   <YoutubeVideoSection />
+  <PostsSection />
 </template>
 
 <script setup>
@@ -37,6 +38,7 @@ import ProfileAboutSection from '../../components/partials/profile/ProfileAboutS
 import SongsSection from '../../components/partials/profile/SongsSection.vue'
 import RouterLinkButton from '../../components/UI/RouterLinkButton.vue'
 import YoutubeVideoSection from '../../components/partials/profile/YoutubeVideoSection.vue'
+import PostsSection from '../../components/partials/profile/PostsSection.vue'
 </script>
 
 <style lang="scss" scoped></style>
