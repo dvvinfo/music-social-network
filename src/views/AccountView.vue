@@ -1,5 +1,5 @@
 <template>
-  <div id="AccountView" class="pt-4">
+  <div id="AccountView" class="max-w-4xl mx-auto pt-4">
     <router-view />
   </div>
 </template>

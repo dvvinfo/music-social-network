@@ -23,11 +23,13 @@
       <ProfileAboutSection/>
     </div>
   </div>
+  <SongsSection/>
 </template>
 
 <script setup>
 import ProfileInfoSection from '../../components/partials/profile/ProfileInfoSection.vue'
 import ProfileAboutSection from '../../components/partials/profile/ProfileAboutSection.vue'
+import SongsSection from '../../components/partials/profile/SongsSection.vue'
 import RouterLinkButton from '../../components/UI/RouterLinkButton.vue';
 </script>
 
