@@ -16,9 +16,7 @@
           </span>
         </div>
         <div class="w-1/2 mt-2">
-          <RouterLink to="" class=" float-right bg-transparent text-gray-900 font-semibold hover:text-white py-2 px-4 border hover:border-transparent rounded hover:bg-green-500 border-green-500">
-            Редактировать профиль
-          </RouterLink>
+          <RouterLinkButton btn-text="Редактировать профиль" color="green" url="/account/edit-profile"/>
         </div>
       </div>
       <ProfileInfoSection/>
@@ -30,6 +28,7 @@
 <script setup>
 import ProfileInfoSection from '../../components/partials/profile/ProfileInfoSection.vue'
 import ProfileAboutSection from '../../components/partials/profile/ProfileAboutSection.vue'
+import RouterLinkButton from '../../components/UI/RouterLinkButton.vue';
 </script>
 
 <style lang="scss" scoped></style>
