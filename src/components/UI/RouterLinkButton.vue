@@ -15,7 +15,8 @@ const props = defineProps({
     type: String
   },
   url: {
-    type: String
+    type: String,
+    default: ''
   },
   color: {
     type: String
