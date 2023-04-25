@@ -1,5 +1,5 @@
 <template>
-  <label class="block uppercase tracking-wide text-xs font-bold mb-2 text-gray-100">
+  <label class="block uppercase tracking-wide text-xs font-bold mb-2">
     {{ label }}
   </label>
   <input

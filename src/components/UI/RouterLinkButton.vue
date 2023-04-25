@@ -22,7 +22,7 @@ const props = defineProps({
     type: String
   },
 })
-const { btnText,url } = toRefs(props)
+const { btnText,url, color } = toRefs(props)
 </script>
 
 <style lang="scss" scoped></style>
