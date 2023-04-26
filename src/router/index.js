@@ -32,7 +32,17 @@ const router = createRouter({
           path: 'edit-profile',
           name: 'EditProfile',
           component: () => import('../views/account/EditProfile.vue')
-        }
+        },
+        {
+          path: 'add-song',
+          name: 'AddSong',
+          component: () => import('../views/account/AddSong.vue')
+        },
+        {
+          path: 'delete-song',
+          name: 'DeleteSong',
+          component: () => import('../views/account/DeleteSong.vue')
+        },
       ]
     }
   ]
