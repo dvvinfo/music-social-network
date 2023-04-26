@@ -43,6 +43,16 @@ const router = createRouter({
           name: 'DeleteSong',
           component: () => import('../views/account/DeleteSong.vue')
         },
+        {
+          path: 'add-youtube-video',
+          name: 'AddYoutubeVideo',
+          component: () => import('../views/account/AddYoutubeVideo.vue')
+        },
+        {
+          path: 'delete-youtube-video',
+          name: 'DeleteYoutubeVideo',
+          component: () => import('../views/account/DeleteYoutubeVideo.vue')
+        },
       ]
     }
   ]
