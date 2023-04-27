@@ -14,10 +14,18 @@
       <div class="my-auto fixed border-white w-80 pt-16">
         <p class="text-2xl text-center text-white font-bold mb-2">Menu</p>
         <RouterLinkButton
+          @click="open = !open"
           class="w-full text-white text-center text-lg"
           btn-text="Профиль"
           color="green"
           url="/account/profile"
+        />
+        <RouterLinkButton
+          @click="open = !open"
+          class="w-full text-white text-center text-lg"
+          btn-text="Посты"
+          color="green"
+          url="/account/posts"
         />
         <RouterLinkButton
           @click="open = !open"
