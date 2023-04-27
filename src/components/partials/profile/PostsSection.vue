@@ -2,14 +2,14 @@
   <div>
     <div class="mx-auto py-4">
       <div class="flex flex-wrap font-bold text-gray-100">
-        <div class="text-gray-900 text-xl">Youtube видео</div>
+        <div class="text-gray-900 text-xl">Посты</div>
         <div class="bg-green-500 w-full h-1"></div>
         <div class="w-full mt-4">
           <RouterLinkButton btn-text="Создать пост" color="green" url="/account/create-post" />
         </div>
       </div>
       <div class="flex flex-wrap mb-4">
-        <div class="border rounded-lg">
+        <div class="rounded-lg mt-2">
           <a href="#">
             <img class="rounded-t-lg" src="https://via.placeholder.com/500x300" alt="" />
           </a>

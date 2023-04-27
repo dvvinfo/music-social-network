@@ -53,6 +53,16 @@ const router = createRouter({
           name: 'DeleteYoutubeVideo',
           component: () => import('../views/account/DeleteYoutubeVideo.vue')
         },
+        {
+          path: 'create-post',
+          name: 'CreatePost',
+          component: () => import('../views/account/CreatePost.vue')
+        },
+        {
+          path: 'edit-post',
+          name: 'EditPost',
+          component: () => import('../views/account/EditPost.vue')
+        },
       ]
     }
   ]
