@@ -11,7 +11,7 @@
               placeholder="Иван"
               v-model:input="firstName"
               input-type="text"
-              error="Это тестовая ошибка"
+              :error="errors.first_name ? errors.first_name[0] : ''"
             />
           </div>
           <div class="mb-4">
@@ -21,7 +21,7 @@
               placeholder="Иванов"
               v-model:input="lastName"
               input-type="text"
-              error="Это тестовая ошибка"
+              :error="errors.last_name ? errors.last_name[0] : ''"
             />
           </div>
           <div class="mb-4">
@@ -31,7 +31,7 @@
               placeholder="ivanov@mail.ru"
               v-model:input="email"
               input-type="email"
-              error="Это тестовая ошибка"
+              :error="errors.email ? errors.email[0] : ''"
             />
           </div>
           <div class="mb-4">
@@ -41,7 +41,7 @@
               placeholder="password123?"
               v-model:input="password"
               input-type="password"
-              error="Это тестовая ошибка"
+              :error="errors.password ? errors.password[0] : ''"
             />
           </div>
           <div class="mb-4">
@@ -54,6 +54,7 @@
             />
           </div>
           <button
+            @click="register"
             class="block w-full bg-green-500 text-white rounded-sm py-3 text-sm tracking-wide"
           >
             Зарегистрироваться
@@ -71,14 +72,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+import axios from 'axios'
+import { useUserStore } from '../stores/user-store'
 import TextInput from '../components/UI/TextInput.vue'
+
+const userStore = useUserStore()
 
 const firstName = ref(null)
 const lastName = ref(null)
 const email = ref(null)
 const password = ref(null)
 const confirmPassword = ref(null)
+const errors = ref([])
+
+const register = async () => {
+  try {
+    let res = await axios.pots('register/', {
+      first_name: firstName.value,
+      last_name: lastName.value,
+      email: email.value,
+      password: password.value,
+      password_confirmation: confirmPassword.value
+    })
+    console.log(res)
+
+    userStore.setUserDetails(res)
+  } catch (err) {
+    errors.value = err.response.data.errors
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>

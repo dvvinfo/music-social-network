@@ -66,7 +66,7 @@ const login = async () => {
 
     userStore.setUserDetails(res)
   } catch (err) {
-    errors.value = err.response.data.error
+    errors.value = err.response.data.errors
   }
 }
 </script>
