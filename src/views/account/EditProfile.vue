@@ -1,5 +1,5 @@
 <template>
-  <div id="EditProfile" class="container max-w-4xl mx-auto pt-20 pb-20 px-6">
+  <div id="EditProfile" class="container max-w-4xl mx-auto pt-10 pb-20 px-6">
     <div class="text-gray-900 text-xl">Редактировать профиль</div>
     <div class="bg-green-500 w-full h-1"></div>
     <!-- Modal -->
@@ -57,7 +57,7 @@
 
     <div class="flex flex-wrap mt-4 mb-6">
       <div class="w-full md:w-1/2 px-3">
-        <CroppedImage label="Обрезанное изображение" :image="image" />
+        <CroppedImage label="Обрезанное изображение" :image="'https://127.0.0.1:8001/images/users/' + image" />
       </div>
     </div>
 
@@ -98,7 +98,7 @@ const lastName = ref(null)
 const location = ref(null)
 const description = ref(null)
 const showModal = ref(false)
-// const ImageData = ref(null)
+const imageData = null
 const image = ref(null)
 const errors = ref([])
 
@@ -111,7 +111,7 @@ onMounted(() => {
 })
 
 const setCroppedImageData = (data) => {
-  // ImageData = data
+  imageData.value = data
   image.value = data.imageUrl
 }
 
@@ -123,6 +123,14 @@ const updateUser = async () => {
   data.append('last_name', lastName.value || '')
   data.append('location', location.value || '')
   data.append('description', description.value || '')
+
+  if (imageData) {
+    data.append('image', imageData.file || '')
+    data.append('height', imageData.height || '')
+    data.append('width', imageData.width || '')
+    data.append('left', imageData.left || '')
+    data.append('top', imageData.top || '')
+  }
 
   try {
     await axios.post('/api/users/' + userStore.id + '?_method=PUT', data)
